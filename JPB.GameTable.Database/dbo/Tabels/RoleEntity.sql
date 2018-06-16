@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[RoleEntity]
+(
+	[RoleEntity_Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+	[Name] NVARCHAR(MAX) NOT NULL
+)

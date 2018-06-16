@@ -1,0 +1,68 @@
+﻿<TextBox x:Class="JPB.GameTable.UI.Resources.Controls.VirtualTextBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+			 Background="Wheat"
+             d:DesignHeight="450" d:DesignWidth="800">
+	<TextBox.Template>
+		<ControlTemplate TargetType="TextBox">
+			<Grid HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+			      VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+				<TextBox x:Name="FakeBox" IsReadOnly="True" IsReadOnlyCaretVisible="False" Text="{TemplateBinding Text}" />
+				<Canvas Height="0" Width="0" HorizontalAlignment="Left" VerticalAlignment="Top">
+					<Path
+						Stroke="Black"
+						StrokeThickness="0.8"
+						x:Name="Caret" 
+						Visibility="Visible"
+						Canvas.Left="0" 
+						Canvas.Top="0" 
+						IsHitTestVisible="False">
+						<Path.RenderTransform>
+							<TranslateTransform X="-4">
+								
+							</TranslateTransform>
+						</Path.RenderTransform>
+						<Path.Data>
+							<GeometryGroup>
+								<LineGeometry StartPoint="2,0" EndPoint="7,0"/>
+								<LineGeometry StartPoint="4.5,0" EndPoint="4.5,15"/>
+								<LineGeometry StartPoint="2,15" EndPoint="7,15"/>
+							</GeometryGroup>
+						</Path.Data>
+						<Path.Triggers>
+							<EventTrigger RoutedEvent="Path.Loaded">
+								<BeginStoryboard>
+									<Storyboard  x:Name="CaretStoryBoard" 
+									             RepeatBehavior="Forever">
+										<DoubleAnimationUsingKeyFrames 
+											Storyboard.TargetProperty="Opacity"
+											Duration="0:0:0:1"
+											FillBehavior="HoldEnd">
+											<DoubleAnimationUsingKeyFrames.KeyFrames>
+												<DiscreteDoubleKeyFrame KeyTime="0:0:0.750" Value="1" />
+												<DiscreteDoubleKeyFrame KeyTime="0:0:0.000" Value="0" />
+											</DoubleAnimationUsingKeyFrames.KeyFrames>
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</BeginStoryboard>
+							</EventTrigger>
+						</Path.Triggers>
+					</Path>
+					<!--<Image  x:Name="Caret" 
+					        Visibility="Visible"
+					        Canvas.Left="0" 
+					        Canvas.Top="0" 
+					        IsHitTestVisible="False">
+						<i:Interaction.Behaviors>
+							<behaviors:CursorImageBehavior Cursor="{x:Static forms1:Cursors.IBeam}" />
+						</i:Interaction.Behaviors>
+						
+					</Image>-->
+				</Canvas>
+			</Grid>
+		</ControlTemplate>
+	</TextBox.Template>
+</TextBox>

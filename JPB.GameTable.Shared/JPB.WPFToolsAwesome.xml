@@ -1,0 +1,1739 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JPB.WPFToolsAwesome</name>
+    </assembly>
+    <members>
+        <member name="T:JPB.DynamicInputBox.InfoWindow.Controls.QuestionUserControl">
+            <summary>
+            QuestionUserControl
+            </summary>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.Controls.QuestionUserControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:JPB.DynamicInputBox.InfoWindow.Controls.UserInputWindow">
+            <summary>
+            UserInputWindow
+            </summary>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.Controls.UserInputWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.IEnumerableManagerExtensions.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0)">
+            <summary>
+                Looks for an specitic element in source and return his null based position
+            </summary>
+            <typeparam name="T">
+                Type of <see>Source</see> and <see>element</see>>
+            </typeparam>
+            <param name="source">An IEnumerable</param>
+            <param name="element">The wanted element</param>
+            <returns>
+                The pos of <see>element</see>"/>
+            </returns>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.IEnumerableManagerExtensions.Add``1(System.Collections.Generic.IEnumerable{``0},``0)">
+            <summary>
+                Add an element to the end of the <c>IEnumerable</c>
+            </summary>
+            <typeparam name="T">The source Type</typeparam>
+            <param name="source">An IEnumerable</param>
+            <param name="item">The neu element if null a new element</param>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.IEnumerableManagerExtensions.AddAndSetSelectetItem``1(System.Collections.ObjectModel.ObservableCollection{``0},``0)">
+            <summary cref="!:Can be Null">
+                Adding the <see>ItemToAdd</see> to the <see>sourcelist</see> and return the new added item
+            </summary>
+            <typeparam name="T">Type of list item</typeparam>
+            <param name="sourcelist">
+                <see>Sourcelist</see> where the item Action will be effectet
+            </param>
+            <param name="ItemToAdd">The new item </param>
+            <exception cref="T:System.ArgumentException">
+                Throws if the <see>Selectetitem</see> is NOT in <see>sourcelist</see>
+            </exception>
+            <returns>The new Selectet item</returns>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.IEnumerableManagerExtensions.AddAndSetSelectetItem``1(System.Collections.ObjectModel.ObservableCollection{``0},System.Action)">
+            <summary>
+                Adding the
+                <cref>Can be Null</cref>
+                <see>ItemToAdd</see> to the <see>sourcelist</see> and return the new added item
+            </summary>
+            <typeparam name="T">Type of list item</typeparam>
+            <param name="sourcelist">
+                <see>Sourcelist</see> where the item Action will be effectet
+            </param>
+            <exception cref="T:System.ArgumentException">
+                Throws if the <see>Selectetitem</see> is NOT in <see>sourcelist</see>
+            </exception>
+            <returns>The new Selectet item</returns>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.IEnumerableManagerExtensions.AddAndSetSelectetItem``1(System.Collections.ObjectModel.ObservableCollection{``0},System.Func{``0},``0)">
+            <summary>
+                Adding the
+                <cref>Can be Null</cref>
+                <see>ItemToAdd</see> to the <see>sourcelist</see> and return the new added item
+            </summary>
+            <typeparam name="T">Type of list item</typeparam>
+            <param name="sourcelist">
+                <see>Sourcelist</see> where the item Action will be effectet
+            </param>
+            <param name="selecteditem"></param>
+            <exception cref="T:System.ArgumentException">
+                Throws if the <see>Selectetitem</see> is NOT in <see>sourcelist</see>
+            </exception>
+            <returns>The new Selectet item</returns>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.IEnumerableManagerExtensions.RemoveAndSetSelectetItem``1(System.Collections.Generic.IEnumerable{``0},``0,System.Func{``0,System.Collections.Generic.IEnumerable{``0}})">
+            <summary>
+                A extention to manage a Remove of an Mananged class
+                The <see>Selectetitem</see> will be set to the position where the old was after a Remove
+            </summary>
+            <typeparam name="T">Type of SelectetItem</typeparam>
+            <param name="sourcelist"></param>
+            <param name="SelectetItem"></param>
+            <param name="additionalAddingAction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.IEnumerableManagerExtensions.RemoveAndSetSelectetItem``1(System.Collections.Generic.ICollection{``0},``0@)">
+            <summary>
+                A extention to manage a Remove of an Mananged class
+                The <see>Selectetitem</see> will be set to the position where the old was after a Remove
+            </summary>
+            <typeparam name="T">Type of list item</typeparam>
+            <param name="sourcelist">
+                <see>Sourcelist</see> where the item will be Removed
+            </param>
+            <param name="Selectetitem">The selected item</param>
+            <exception cref="T:System.ArgumentException">
+                Throws if the <see>Selectetitem</see> is NOT in <see>sourcelist</see>
+            </exception>
+            <returns>The new Selectet item</returns>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.IEnumerableManagerExtensions.RemoveAndSetSelectetItem``1(System.Collections.Generic.ICollection{``0},``0,System.Boolean)">
+            <summary>
+                A extention to manage a Remove of an Mananged class
+                The <see>Selectetitem</see> will be set to the position where the old was after a Remove
+            </summary>
+            <typeparam name="T">Type of list item</typeparam>
+            <param name="sourcelist">
+                <see>Sourcelist</see> where the item will be Removed
+            </param>
+            <param name="Selectetitem">The selected item</param>
+            <param name="SetToLast">
+                Set to <c>True</c> if the <see>returns</see>should be the last item of <see>sourcelist</see>
+            </param>
+            <exception cref="T:System.ArgumentException">
+                Throws if the <see>Selectetitem</see> is NOT in <see>sourcelist</see>
+            </exception>
+            <returns>The new Selectet item</returns>
+        </member>
+        <member name="F:JPB.DynamicInputBox.InfoWindow.InputMode.Number">
+            <summary>
+                Select a Intinger
+                Returrns the Intinger
+            </summary>
+        </member>
+        <member name="F:JPB.DynamicInputBox.InfoWindow.InputMode.Text">
+            <summary>
+                A normal Text reprersented by a TextBox
+                Returns The text as String
+            </summary>
+        </member>
+        <member name="F:JPB.DynamicInputBox.InfoWindow.InputMode.RichText">
+            <summary>
+                A normal RichText reprersented by a TextBox with Textwrapping
+                Returns The text as String
+            </summary>
+        </member>
+        <member name="F:JPB.DynamicInputBox.InfoWindow.InputMode.RadioBox">
+            <summary>
+                A Collection represented by Radioboxes.
+                Syntax:
+                Hallo this is the question text #qFirst question#qSec Question#q more questions ...
+                Returns The index of the Selected item as int
+            </summary>
+        </member>
+        <member name="F:JPB.DynamicInputBox.InfoWindow.InputMode.CheckBox">
+            <summary>
+                A Collection represented by Checkboxes to allow Multible selections.
+                Syntax:
+                Hallo this is the question text #qFirst question#qSec Question#q more questions ...
+                Returns a collection of PB.Wrapper.ListBoxItemWrapper
+            </summary>
+        </member>
+        <member name="F:JPB.DynamicInputBox.InfoWindow.InputMode.ShowProgress">
+            <summary>
+                A action<!--object--> that will be invoked Asyc
+                Returns the result of that action<!--object--> as Object
+            </summary>
+        </member>
+        <member name="F:JPB.DynamicInputBox.InfoWindow.InputMode.Date">
+            <summary>
+                Let the user Choose a Date
+                Returns the selected DateTime
+            </summary>
+        </member>
+        <member name="F:JPB.DynamicInputBox.InfoWindow.InputMode.MultiInput">
+            <summary>
+                Select a collection of values
+                Returns the collection of all objects
+            </summary>
+        </member>
+        <member name="F:JPB.DynamicInputBox.InfoWindow.InputMode.ListView">
+            <summary>
+                Shows a Simple list of objects,
+                Use the IInputDescriptor interface to implement the Items
+            </summary>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.IQuestionModelImp.QuestionActionViewModel.RunAction(System.Object)">
+            <summary>
+            </summary>
+            <param name="sender">The transferparameter</param>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.IQuestionModelImp.QuestionActionViewModel.CanRunAction(System.Object)">
+            <summary>
+            </summary>
+            <param name="sender">The transferparameter</param>
+            <returns>True if you can use it otherwise false</returns>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.IQuestionModelImp.QuestionMultiInputViewModel.AddInput(System.Object)">
+            <summary>
+            </summary>
+            <param name="sender">The transferparameter</param>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.IQuestionModelImp.QuestionMultiInputViewModel.CanAddInput(System.Object)">
+            <summary>
+            </summary>
+            <param name="sender">The transferparameter</param>
+            <returns>True if you can use it otherwise false</returns>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.IQuestionModelImp.QuestionMultiInputViewModel.RemoveSelectedInput(System.Object)">
+            <summary>
+            </summary>
+            <param name="sender">The transferparameter</param>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.IQuestionModelImp.QuestionMultiInputViewModel.CanRemoveSelectedInput(System.Object)">
+            <summary>
+            </summary>
+            <param name="sender">The transferparameter</param>
+            <returns>True if you can use it otherwise false</returns>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.UserInputViewModel.NextStep(System.Object)">
+            <summary>
+            </summary>
+            <param name="sender">The transferparameter</param>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.UserInputViewModel.CanNextStep(System.Object)">
+            <summary>
+            </summary>
+            <param name="sender">The transferparameter</param>
+            <returns>True if you can use it otherwise false</returns>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.UserInputViewModel.PreviousStep(System.Object)">
+            <summary>
+            </summary>
+            <param name="sender">The transferparameter</param>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.UserInputViewModel.CanPreviousStep(System.Object)">
+            <summary>
+            </summary>
+            <param name="sender">The transferparameter</param>
+            <returns>True if you can use it otherwise false</returns>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.UserInputViewModel.Abort(System.Object)">
+            <summary>
+            </summary>
+            <param name="sender">The transferparameter</param>
+        </member>
+        <member name="M:JPB.DynamicInputBox.InfoWindow.UserInputViewModel.CanAbort(System.Object)">
+            <summary>
+            </summary>
+            <param name="sender">The transferparameter</param>
+            <returns>True if you can use it otherwise false</returns>
+        </member>
+        <member name="P:JPB.ErrorValidation.IErrorValidatorBase.Error">
+            <summary>
+            The general Error string for this Object
+            </summary>
+        </member>
+        <member name="P:JPB.ErrorValidation.IErrorValidatorBase.Validate">
+            <summary>
+            Enabled/Disable all validation
+            </summary>
+        </member>
+        <member name="P:JPB.ErrorValidation.IErrorValidatorBase.MessageFormat">
+            <summary>
+            if and how messages should be formatted
+            </summary>
+        </member>
+        <member name="P:JPB.ErrorValidation.IErrorValidatorBase.UserErrors">
+            <summary>
+            The Errors that are used for validation
+            </summary>
+        </member>
+        <member name="P:JPB.ErrorValidation.IErrorValidatorBase.HasError">
+            <summary>
+            Are any Errors known?
+            </summary>
+        </member>
+        <member name="M:JPB.ErrorValidation.IErrorValidatorBase.ForceRefresh">
+            <summary>
+            Refresh the Errors
+            </summary>
+        </member>
+        <member name="M:JPB.ErrorValidation.IErrorValidatorBase.GetError(System.String,System.Object)">
+            <summary>
+            Gets all Errors for the Field
+            </summary>
+            <param name="columnName"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="P:JPB.ErrorValidation.IErrorValidatorBase.ActiveValidationCases">
+            <summary>
+            The list of all Active Errors
+            </summary>
+        </member>
+        <member name="P:JPB.ErrorValidation.IErrorValidatorBase`1.UserErrors">
+            <summary>
+            The Errors that are used for validation
+            </summary>
+        </member>
+        <member name="F:JPB.ErrorValidation.ValidationTyps.AsyncState.NoPreference">
+            <summary>
+            Let the Engine decide
+            </summary>
+        </member>
+        <member name="F:JPB.ErrorValidation.ValidationTyps.AsyncState.Sync">
+            <summary>
+            The IValidation Element will be executed in the callers context together will all other sync elements
+            </summary>
+        </member>
+        <member name="F:JPB.ErrorValidation.ValidationTyps.AsyncState.Async">
+            <summary>
+            The IValidation element will be executed in its own Task
+            </summary>
+        </member>
+        <member name="F:JPB.ErrorValidation.ValidationTyps.AsyncState.AsyncSharedPerCall">
+            <summary>
+            The IValidation element will be executed together will all other elements from that call. Its the same like sync but async
+            </summary>
+        </member>
+        <member name="F:JPB.ErrorValidation.ValidationTyps.AsyncState.SyncToDispatcher">
+            <summary>
+            The IValidation element will be executed later in the dispatcher
+            </summary>
+        </member>
+        <member name="T:JPB.ErrorValidation.ValidationTyps.Error`1">
+            <summary>
+                Defines an Error
+            </summary>
+        </member>
+        <member name="P:JPB.ErrorValidation.ValidationTyps.Error`1.JPB#ErrorValidation#ValidationTyps#IValidation#Condition">
+            <summary>
+            The Condition that indicates an Error. True error, False NoError
+            </summary>
+        </member>
+        <member name="T:JPB.ErrorValidation.ValidationTyps.ErrorExtentions">
+            <summary>
+            Common used Operations for IValidation objects
+            </summary>
+        </member>
+        <member name="M:JPB.ErrorValidation.ValidationTyps.ErrorExtentions.And``1(JPB.ErrorValidation.ValidationTyps.IValidation{``0},JPB.ErrorValidation.ValidationTyps.IValidation{``0},System.Boolean)">
+            <summary>
+            Appends an Error if this Condition was True
+            </summary>
+            <param name="source"></param>
+            <param name="error"></param>
+            <param name="includeIndicators"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.ErrorValidation.ValidationTyps.ErrorExtentions.AndNot``1(JPB.ErrorValidation.ValidationTyps.IValidation{``0},JPB.ErrorValidation.ValidationTyps.IValidation{``0},System.Boolean)">
+            <summary>
+            Appends an Error if this Condition was True
+            </summary>
+            <param name="source"></param>
+            <param name="error"></param>
+            <param name="includeIndicators"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.ErrorValidation.ValidationTyps.ErrorExtentions.And``1(System.Collections.Generic.IEnumerable{JPB.ErrorValidation.ValidationTyps.IValidation{``0}},JPB.ErrorValidation.ValidationTyps.IValidation{``0},System.Boolean)">
+            <summary>
+            Appends an Error if this Condition was True
+            </summary>
+            <param name="source"></param>
+            <param name="error"></param>
+            <param name="includeIndicators"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.ErrorValidation.ValidationTyps.ErrorExtentions.AndNot``1(System.Collections.Generic.IEnumerable{JPB.ErrorValidation.ValidationTyps.IValidation{``0}},JPB.ErrorValidation.ValidationTyps.IValidation{``0},System.Boolean)">
+            <summary>
+            Appends an Error if this Condition was True
+            </summary>
+            <param name="source"></param>
+            <param name="error"></param>
+            <param name="includeIndicators"></param>
+            <returns></returns>
+        </member>
+        <member name="P:JPB.ErrorValidation.ValidationTyps.IAsyncValidationOption.AsyncState">
+            <summary>
+            Should this error executed Async or sync
+            </summary>
+        </member>
+        <member name="P:JPB.ErrorValidation.ValidationTyps.IAsyncValidationOption.RunState">
+            <summary>
+            Should only a Validation only executed when no other Validation of this type is executed by now
+            </summary>
+        </member>
+        <member name="P:JPB.ErrorValidation.ValidationTyps.IValidation.ErrorType">
+            <summary>
+            An description what kind of Validation is used e.g "Warning", "Error", "FYI"
+            </summary>
+        </member>
+        <member name="P:JPB.ErrorValidation.ValidationTyps.IValidation.ErrorIndicator">
+            <summary>
+            An indicator for all fields that participate on the Validation
+            </summary>
+        </member>
+        <member name="P:JPB.ErrorValidation.ValidationTyps.IValidation.ErrorText">
+            <summary>
+            The text that should be emitted when the Condition is True
+            </summary>
+        </member>
+        <member name="P:JPB.ErrorValidation.ValidationTyps.IValidation.Condition">
+            <summary>
+            The Condition that indicates an Error. True error, False NoError
+            </summary>
+        </member>
+        <member name="P:JPB.ErrorValidation.ValidationTyps.IValidation.Unbound">
+            <summary>
+            Set this to true to simulate a Virtual call the the underlying Error provider.
+            </summary>
+        </member>
+        <member name="P:JPB.ErrorValidation.ValidationTyps.IValidation`1.Condition">
+            <summary>
+            The Condition that indicates an Error. True error, False NoError
+            </summary>
+        </member>
+        <member name="T:JPB.ErrorValidation.ViewModelProvider.AsyncErrorProviderBase">
+            <summary>
+                Provides the INotifyDataErrorInfo Interface
+            </summary>
+        </member>
+        <member name="M:JPB.ErrorValidation.ViewModelProvider.AsyncErrorProviderBase.ForceRefresh">
+            <inheritdoc />
+        </member>
+        <member name="P:JPB.ErrorValidation.ViewModelProvider.AsyncErrorProviderBase.ValidationToUiError">
+            <summary>
+            If an Rendering is Requested, the ui should use this
+            </summary>
+        </member>
+        <member name="P:JPB.ErrorValidation.ViewModelProvider.AsyncErrorProviderBase.AsyncValidationOption">
+            <summary>
+                The Default execution if the Item is no IAsyncValidation
+            </summary>
+        </member>
+        <member name="P:JPB.ErrorValidation.ViewModelProvider.AsyncErrorProviderBase.IsValidating">
+            <summary>
+                Is currently Validating
+            </summary>
+        </member>
+        <member name="P:JPB.ErrorValidation.ViewModelProvider.AsyncErrorProviderBase.ErrorMapper">
+            <summary>
+                Gets all Error lists for all collumns
+            </summary>
+        </member>
+        <member name="E:JPB.ErrorValidation.ViewModelProvider.AsyncErrorProviderBase.ErrorsChanged">
+            <inheritdoc />
+        </member>
+        <member name="M:JPB.ErrorValidation.ViewModelProvider.AsyncErrorProviderBase.GetErrors(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="P:JPB.ErrorValidation.ViewModelProvider.AsyncErrorProviderBase.HasErrors">
+            <inheritdoc />
+        </member>
+        <member name="M:JPB.ErrorValidation.ViewModelProvider.AsyncErrorProviderBase.ScheduleErrorUpdate(System.String)">
+            <summary>
+            Schedules a new Update for the Property
+            </summary>
+            <param name="propertyName"></param>
+        </member>
+        <member name="M:JPB.ErrorValidation.ViewModelProvider.AsyncErrorProviderBase.OnErrorsChanged(System.ComponentModel.DataErrorsChangedEventArgs)">
+            <inheritdoc />
+        </member>
+        <member name="P:JPB.ErrorValidation.ViewModelProvider.Base.ErrorProviderBase.Error">
+            <inheritdoc />
+        </member>
+        <member name="P:JPB.ErrorValidation.ViewModelProvider.Base.ErrorProviderBase.UserErrors">
+            <inheritdoc />
+        </member>
+        <member name="P:JPB.ErrorValidation.ViewModelProvider.Base.ErrorProviderBase.Validate">
+            <inheritdoc />
+        </member>
+        <member name="P:JPB.ErrorValidation.ViewModelProvider.Base.ErrorProviderBase.Validation">
+            <summary>
+            How should be validated
+            </summary>
+        </member>
+        <member name="P:JPB.ErrorValidation.ViewModelProvider.Base.ErrorProviderBase.ActiveValidationCases">
+            <inheritdoc />
+        </member>
+        <member name="P:JPB.ErrorValidation.ViewModelProvider.Base.ErrorProviderBase.HasError">
+            <inheritdoc />
+        </member>
+        <member name="P:JPB.ErrorValidation.ViewModelProvider.Base.ErrorProviderBase.MessageFormat">
+            <inheritdoc />
+        </member>
+        <member name="P:JPB.ErrorValidation.ViewModelProvider.Base.ErrorProviderBase.AggregateMultiError">
+            <summary>
+            For IDataErrorInfo support with multibe Errors for one field.
+            </summary>
+        </member>
+        <member name="P:JPB.ErrorValidation.ViewModelProvider.Base.ErrorProviderBase.AlwaysCheckFailedInNextRun">
+            <summary>
+            Check failed Errors on next Invoke
+            </summary>
+        </member>
+        <member name="F:JPB.ErrorValidation.ViewModelProvider.Base.ErrorProviderBase.ValidationLogic.ValidateSelf">
+            <summary>
+            Do not use a specifc logic but use the ValidateErrors function to enumerate the Errors
+            </summary>
+        </member>
+        <member name="M:JPB.ErrorValidation.ViewModelProvider.Base.ErrorProviderBase.ForceRefresh">
+            <inheritdoc />
+        </member>
+        <member name="M:JPB.ErrorValidation.ViewModelProvider.Base.ErrorProviderBase.GetError(System.String,System.Object)">
+            <summary>
+            Gets all Errors for the Field
+            </summary>
+            <param name="columnName"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.ErrorValidation.ViewModelProvider.Base.ErrorProviderBase.ValidateErrors(System.Collections.Generic.IEnumerable{JPB.ErrorValidation.ValidationTyps.IValidation})">
+            <summary>
+            Overwrite to create your own Validation logic
+            </summary>
+            <param name="errorsForField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.ErrorValidation.ViewModelProvider.Base.ErrorProviderBase.ObManage(System.String,System.Object)">
+            <summary>
+            The main function for Starting an Validation Cycle
+            </summary>
+            <param name="errorIndicator"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.ErrorValidation.ViewModelProvider.Base.ErrorProviderBase.ProduceValidations(System.String)">
+            <summary>
+            Returns all known Errors of this Instance
+            </summary>
+            <param name="errorIndicator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.ErrorValidation.ViewModelProvider.Base.ErrorProviderBase.ObManage(System.Collections.Generic.IEnumerable{JPB.ErrorValidation.ValidationTyps.IValidation},System.Object)">
+            <summary>
+            The main Validation logic that handels all errors base on the current Validation flag
+            </summary>
+            <param name="errorsForField"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="E:JPB.ErrorValidation.ViewModelProvider.Base.ErrorProviderBase.CollectionChanged">
+            <summary>
+            Will trigger when the list of Errors has Changed
+            </summary>
+        </member>
+        <member name="T:JPB.ErrorValidation.ViewModelProvider.DataErrorBase`1">
+            <summary>
+            Provides the IDataErrorInfo interface
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:JPB.ErrorValidation.ViewModelProvider.DataErrorBase">
+            <summary>
+            Provides the IDataErrorInfo interface
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:JPB.Extentions.Extensions.IEnumerableManagerExtensions.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0)">
+            <summary>
+                Looks for an specitic element in source and return his null based position
+            </summary>
+            <typeparam name="T">
+                Type of <see>Source</see> and <see>element</see>>
+            </typeparam>
+            <param name="source">An IEnumerable</param>
+            <param name="element">The wanted element</param>
+            <returns>
+                The pos of <see>element</see>"/>
+            </returns>
+        </member>
+        <member name="M:JPB.Extentions.Extensions.IEnumerableManagerExtensions.AddAndSetSelectetItem``1(System.Collections.ObjectModel.ObservableCollection{``0},``0)">
+            <summary cref="!:Can be Null">
+                Adding the <see>ItemToAdd</see> to the <see>sourcelist</see> and return the new added item
+            </summary>
+            <typeparam name="T">Type of list item</typeparam>
+            <param name="sourcelist">
+                <see>Sourcelist</see> where the item Action will be effectet
+            </param>
+            <param name="ItemToAdd">The new item </param>
+            <exception cref="T:System.ArgumentException">
+                Throws if the <see>Selectetitem</see> is NOT in <see>sourcelist</see>
+            </exception>
+            <returns>The new Selectet item</returns>
+        </member>
+        <member name="M:JPB.Extentions.Extensions.IEnumerableManagerExtensions.AddAndSetSelectetItem``1(System.Collections.ObjectModel.ObservableCollection{``0},System.Action)">
+            <summary>
+                Adding the
+                <cref>Can be Null</cref>
+                <see>ItemToAdd</see> to the <see>sourcelist</see> and return the new added item
+            </summary>
+            <typeparam name="T">Type of list item</typeparam>
+            <param name="sourcelist">
+                <see>Sourcelist</see> where the item Action will be effectet
+            </param>
+            <exception cref="T:System.ArgumentException">
+                Throws if the <see>Selectetitem</see> is NOT in <see>sourcelist</see>
+            </exception>
+            <returns>The new Selectet item</returns>
+        </member>
+        <member name="M:JPB.Extentions.Extensions.IEnumerableManagerExtensions.AddAndSetSelectetItem``1(System.Collections.ObjectModel.ObservableCollection{``0},System.Func{``0},``0)">
+            <summary>
+                Adding the
+                <cref>Can be Null</cref>
+                <see>ItemToAdd</see> to the <see>sourcelist</see> and return the new added item
+            </summary>
+            <typeparam name="T">Type of list item</typeparam>
+            <param name="sourcelist">
+                <see>Sourcelist</see> where the item Action will be effectet
+            </param>
+            <param name="selecteditem"></param>
+            <exception cref="T:System.ArgumentException">
+                Throws if the <see>Selectetitem</see> is NOT in <see>sourcelist</see>
+            </exception>
+            <returns>The new Selectet item</returns>
+        </member>
+        <member name="M:JPB.Extentions.Extensions.IEnumerableManagerExtensions.RemoveAndSetSelectetItem``1(System.Collections.Generic.IEnumerable{``0},``0,System.Func{``0,System.Collections.Generic.IEnumerable{``0}})">
+            <summary>
+                A extention to manage a Remove of an Mananged class
+                The <see>Selectetitem</see> will be set to the position where the old was after a Remove
+            </summary>
+            <typeparam name="T">Type of SelectetItem</typeparam>
+            <param name="sourcelist"></param>
+            <param name="SelectetItem"></param>
+            <param name="additionalAddingAction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.Extentions.Extensions.IEnumerableManagerExtensions.RemoveAndSetSelectetItem``1(System.Collections.Generic.ICollection{``0},``0@)">
+            <summary>
+                A extention to manage a Remove of an Mananged class
+                The <see>Selectetitem</see> will be set to the position where the old was after a Remove
+            </summary>
+            <typeparam name="T">Type of list item</typeparam>
+            <param name="sourcelist">
+                <see>Sourcelist</see> where the item will be Removed
+            </param>
+            <param name="Selectetitem">The selected item</param>
+            <exception cref="T:System.ArgumentException">
+                Throws if the <see>Selectetitem</see> is NOT in <see>sourcelist</see>
+            </exception>
+            <returns>The new Selectet item</returns>
+        </member>
+        <member name="M:JPB.Extentions.Extensions.IEnumerableManagerExtensions.RemoveAndSetSelectetItem``1(System.Collections.Generic.ICollection{``0},``0,System.Boolean)">
+            <summary>
+                A extention to manage a Remove of an Mananged class
+                The <see>Selectetitem</see> will be set to the position where the old was after a Remove
+            </summary>
+            <typeparam name="T">Type of list item</typeparam>
+            <param name="sourcelist">
+                <see>Sourcelist</see> where the item will be Removed
+            </param>
+            <param name="Selectetitem">The selected item</param>
+            <param name="SetToLast">
+                Set to <c>True</c> if the <see>returns</see>should be the last item of <see>sourcelist</see>
+            </param>
+            <exception cref="T:System.ArgumentException">
+                Throws if the <see>Selectetitem</see> is NOT in <see>sourcelist</see>
+            </exception>
+            <returns>The new Selectet item</returns>
+        </member>
+        <member name="T:JPB.Tasking.TaskManagement.Threading.SerialFactoryBase">
+            <summary>
+            	Base class for the Serial Factory base
+            </summary>
+        </member>
+        <member name="F:JPB.Tasking.TaskManagement.Threading.SerialFactoryBase.DefaultTimeout">
+            <summary>
+            Default Timeout for disposing
+            </summary>
+        </member>
+        <member name="P:JPB.Tasking.TaskManagement.Threading.SerialFactoryBase.Timeout">
+            <summary>
+            Timeout for disposing
+            </summary>
+        </member>
+        <member name="E:JPB.Tasking.TaskManagement.Threading.SerialFactoryBase.StateChanged">
+            <summary>
+            Will be invoked when the Status of the Current Thread has Changed
+            </summary>
+        </member>
+        <member name="E:JPB.Tasking.TaskManagement.Threading.SerialFactoryBase.TaskFailedAsync">
+            <summary>
+            Will be invoked when any task has Failed
+            </summary>
+        </member>
+        <member name="P:JPB.Tasking.TaskManagement.Threading.SerialFactoryBase.IsWorking">
+            <summary>
+            Returns true if the Current Thread is working on any item inside the ConcurrentQueue
+            </summary>
+        </member>
+        <member name="M:JPB.Tasking.TaskManagement.Threading.SerialFactoryBase.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:JPB.Tasking.TaskManagement.Threading.SerialFactoryBase.OnStateChanged">
+            <summary>
+            Raises the StateChanged Event
+            </summary>
+        </member>
+        <member name="M:JPB.Tasking.TaskManagement.Threading.SerialFactoryBase.OnTaskFailed(System.Exception)">
+            <summary>
+            Raises the TaskFailedAsync Event
+            </summary>
+        </member>
+        <member name="T:JPB.Tasking.TaskManagement.Threading.SerielTaskFactory">
+            <summary>
+            	Creates a Queue of Actions that will be called asyncrolly as they are added
+            </summary>
+        </member>
+        <member name="M:JPB.Tasking.TaskManagement.Threading.SerielTaskFactory.#ctor(System.String)">
+            <summary>
+            Ctor
+            </summary>
+        </member>
+        <member name="P:JPB.Tasking.TaskManagement.Threading.SerielTaskFactory.ConcurrentQueue">
+            <summary>
+            Current enqued Actions
+            </summary>
+        </member>
+        <member name="M:JPB.Tasking.TaskManagement.Threading.SerielTaskFactory.Add(System.Action)">
+            <summary>
+            Adds an Action to the Queue and starts the scheduler
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="M:JPB.Tasking.TaskManagement.Threading.SerielTaskFactory.TryAdd(System.Action)">
+            <summary>
+            Adds an Action to the Queue and starts the scheduler
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="T:JPB.Tasking.TaskManagement.Threading.SingelSeriellTaskFactory">
+            <summary>
+            	Creates a Queue of Actions that will be called asyncrolly as they are added. By defining the <para>MaxRunPerKey</para> you define how many actions
+            	should be run with the same key
+            </summary>
+        </member>
+        <member name="M:JPB.Tasking.TaskManagement.Threading.SingelSeriellTaskFactory.#ctor(System.Int32)">
+            <summary>
+            	Creates a new Instance of the SingelSeriellTaskFactory and defines how many actions with the same key should be queued
+            </summary>
+            <param name="maxRunPerKey"></param>
+        </member>
+        <member name="P:JPB.Tasking.TaskManagement.Threading.SingelSeriellTaskFactory.ConcurrentQueue">
+            <summary>
+            	The Queue of Actions
+            </summary>
+        </member>
+        <member name="M:JPB.Tasking.TaskManagement.Threading.SingelSeriellTaskFactory.TryAdd(System.Action,System.Object)">
+            <summary>
+            	Enqueues a new Action and starts the Worker
+            </summary>
+            <param name="action"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.Tasking.TaskManagement.Threading.SingelSeriellTaskFactory.TryAdd(System.Action,System.Object,System.Int32)">
+            <summary>
+            	Enqueues the Action if its not the <para>max</para> action in the Queue
+            </summary>
+            <param name="action"></param>
+            <param name="key"></param>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.Converter.BooleanInverseConverter.Convert(System.Boolean,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+                Konvertiert einen Wert.
+            </summary>
+            <returns>
+                Ein konvertierter Wert.Wenn die Methode null zurückgibt, wird der gültige NULL-Wert verwendet.
+            </returns>
+            <param name="value">Der von der Bindungsquelle erzeugte Wert.</param>
+            <param name="targetType">Der Typ der Bindungsziel-Eigenschaft.</param>
+            <param name="parameter">Der zu verwendende Konverterparameter.</param>
+            <param name="culture">Die im Konverter zu verwendende Kultur.</param>
+        </member>
+        <member name="M:JPB.WPFBase.Converter.BooleanInverseConverter.ConvertBack(System.Boolean,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+                Konvertiert einen Wert.
+            </summary>
+            <returns>
+                Ein konvertierter Wert.Wenn die Methode null zurückgibt, wird der gültige NULL-Wert verwendet.
+            </returns>
+            <param name="value">Der Wert, der vom Bindungsziel erzeugt wird.</param>
+            <param name="targetType">Der Typ, in den konvertiert werden soll.</param>
+            <param name="parameter">Der zu verwendende Konverterparameter.</param>
+            <param name="culture">Die im Konverter zu verwendende Kultur.</param>
+        </member>
+        <member name="M:JPB.WPFBase.Converter.BooleanVisibilityInverseConverter.Convert(System.Boolean,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+                Konvertiert einen Wert.
+            </summary>
+            <returns>
+                Ein konvertierter Wert.Wenn die Methode null zurückgibt, wird der gültige NULL-Wert verwendet.
+            </returns>
+            <param name="value">Der von der Bindungsquelle erzeugte Wert.</param>
+            <param name="targetType">Der Typ der Bindungsziel-Eigenschaft.</param>
+            <param name="parameter">Der zu verwendende Konverterparameter.</param>
+            <param name="culture">Die im Konverter zu verwendende Kultur.</param>
+        </member>
+        <member name="M:JPB.WPFBase.Converter.BooleanVisibilityInverseConverter.ConvertBack(System.Windows.Visibility,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+                Konvertiert einen Wert.
+            </summary>
+            <returns>
+                Ein konvertierter Wert.Wenn die Methode null zurückgibt, wird der gültige NULL-Wert verwendet.
+            </returns>
+            <param name="value">Der Wert, der vom Bindungsziel erzeugt wird.</param>
+            <param name="targetType">Der Typ, in den konvertiert werden soll.</param>
+            <param name="parameter">Der zu verwendende Konverterparameter.</param>
+            <param name="culture">Die im Konverter zu verwendende Kultur.</param>
+        </member>
+        <member name="M:JPB.WPFBase.Converter.TypedParamValueConverter`3.Convert(`0,System.Type,`2,System.Globalization.CultureInfo)">
+            <summary>
+                Konvertiert einen Wert.
+            </summary>
+            <returns>
+                Ein konvertierter Wert.Wenn die Methode null zurückgibt, wird der gültige NULL-Wert verwendet.
+            </returns>
+            <param name="value">Der von der Bindungsquelle erzeugte Wert.</param>
+            <param name="targetType">Der Typ der Bindungsziel-Eigenschaft.</param>
+            <param name="parameter">Der zu verwendende Konverterparameter.</param>
+            <param name="culture">Die im Konverter zu verwendende Kultur.</param>
+        </member>
+        <member name="M:JPB.WPFBase.Converter.TypedParamValueConverter`3.ConvertBack(`1,System.Type,`2,System.Globalization.CultureInfo)">
+            <summary>
+                Konvertiert einen Wert.
+            </summary>
+            <returns>
+                Ein konvertierter Wert.Wenn die Methode null zurückgibt, wird der gültige NULL-Wert verwendet.
+            </returns>
+            <param name="value">Der Wert, der vom Bindungsziel erzeugt wird.</param>
+            <param name="targetType">Der Typ, in den konvertiert werden soll.</param>
+            <param name="parameter">Der zu verwendende Konverterparameter.</param>
+            <param name="culture">Die im Konverter zu verwendende Kultur.</param>
+        </member>
+        <member name="M:JPB.WPFBase.Converter.TypedParamValueConverter`3.Convert(`0,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+                Konvertiert einen Wert.
+            </summary>
+            <returns>
+                Ein konvertierter Wert.Wenn die Methode null zurückgibt, wird der gültige NULL-Wert verwendet.
+            </returns>
+            <param name="value">Der von der Bindungsquelle erzeugte Wert.</param>
+            <param name="targetType">Der Typ der Bindungsziel-Eigenschaft.</param>
+            <param name="parameter">Der zu verwendende Konverterparameter.</param>
+            <param name="culture">Die im Konverter zu verwendende Kultur.</param>
+        </member>
+        <member name="M:JPB.WPFBase.Converter.TypedParamValueConverter`3.ConvertBack(`1,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+                Konvertiert einen Wert.
+            </summary>
+            <returns>
+                Ein konvertierter Wert.Wenn die Methode null zurückgibt, wird der gültige NULL-Wert verwendet.
+            </returns>
+            <param name="value">Der Wert, der vom Bindungsziel erzeugt wird.</param>
+            <param name="targetType">Der Typ, in den konvertiert werden soll.</param>
+            <param name="parameter">Der zu verwendende Konverterparameter.</param>
+            <param name="culture">Die im Konverter zu verwendende Kultur.</param>
+        </member>
+        <member name="M:JPB.WPFBase.Converter.TypedValueConverter`2.Convert(`0,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+                Konvertiert einen Wert.
+            </summary>
+            <returns>
+                Ein konvertierter Wert.Wenn die Methode null zurückgibt, wird der gültige NULL-Wert verwendet.
+            </returns>
+            <param name="value">Der von der Bindungsquelle erzeugte Wert.</param>
+            <param name="targetType">Der Typ der Bindungsziel-Eigenschaft.</param>
+            <param name="parameter">Der zu verwendende Konverterparameter.</param>
+            <param name="culture">Die im Konverter zu verwendende Kultur.</param>
+        </member>
+        <member name="M:JPB.WPFBase.Converter.TypedValueConverter`2.ConvertBack(`1,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+                Konvertiert einen Wert.
+            </summary>
+            <returns>
+                Ein konvertierter Wert.Wenn die Methode null zurückgibt, wird der gültige NULL-Wert verwendet.
+            </returns>
+            <param name="value">Der Wert, der vom Bindungsziel erzeugt wird.</param>
+            <param name="targetType">Der Typ, in den konvertiert werden soll.</param>
+            <param name="parameter">Der zu verwendende Konverterparameter.</param>
+            <param name="culture">Die im Konverter zu verwendende Kultur.</param>
+        </member>
+        <member name="M:JPB.WPFBase.Converter.TypedValueConverter`2.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+                Konvertiert einen Wert.
+            </summary>
+            <returns>
+                Ein konvertierter Wert.Wenn die Methode null zurückgibt, wird der gültige NULL-Wert verwendet.
+            </returns>
+            <param name="value">Der von der Bindungsquelle erzeugte Wert.</param>
+            <param name="targetType">Der Typ der Bindungsziel-Eigenschaft.</param>
+            <param name="parameter">Der zu verwendende Konverterparameter.</param>
+            <param name="culture">Die im Konverter zu verwendende Kultur.</param>
+        </member>
+        <member name="M:JPB.WPFBase.Converter.TypedValueConverter`2.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+                Konvertiert einen Wert.
+            </summary>
+            <returns>
+                Ein konvertierter Wert.Wenn die Methode null zurückgibt, wird der gültige NULL-Wert verwendet.
+            </returns>
+            <param name="value">Der Wert, der vom Bindungsziel erzeugt wird.</param>
+            <param name="targetType">Der Typ, in den konvertiert werden soll.</param>
+            <param name="parameter">Der zu verwendende Konverterparameter.</param>
+            <param name="culture">Die im Konverter zu verwendende Kultur.</param>
+        </member>
+        <member name="F:JPB.WPFBase.MVVM.DelegateCommand.DependLevel.Complete">
+            <summary>
+            The complete CanExecute will be used
+            </summary>
+        </member>
+        <member name="F:JPB.WPFBase.MVVM.DelegateCommand.DependLevel.WorkingOnly">
+            <summary>
+            Only the IsWorking flag will be used. Way more performance
+            </summary>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.DelegateCommand.AsyncDelegateCommand.DependsOn">
+            <summary>
+            Gets the list this Command depends on
+            </summary>
+        </member>
+        <member name="F:JPB.WPFBase.MVVM.DelegateCommand.AsyncDelegateCommand._canExecutePredicate">
+            <summary>
+                Predicate to determine if the command is valid for execution
+            </summary>
+        </member>
+        <member name="F:JPB.WPFBase.MVVM.DelegateCommand.AsyncDelegateCommand._executionAction">
+            <summary>
+                Action to be performed when this command is executed
+            </summary>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.DelegateCommand.AsyncDelegateCommand.#ctor(System.Action{System.Object})">
+            <summary>
+                Initializes a new instance of the DelegateCommand class.
+                The command will always be valid for execution.
+            </summary>
+            <param name="execute">The delegate to call on execution</param>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.DelegateCommand.AsyncDelegateCommand.#ctor(System.Action{System.Object},System.Predicate{System.Object})">
+            <summary>
+                Initializes a new instance of the DelegateCommand class.
+            </summary>
+            <param name="execute">The delegate to call on execution</param>
+            <param name="canExecute">The predicate to determine if command is valid for execution</param>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.DelegateCommand.AsyncDelegateCommand.AsyncCanExecute">
+            <summary>
+            If set the Can Execute will be invoked Async and after the compltion the RequerySuggested event will be fired
+            </summary>
+        </member>
+        <member name="E:JPB.WPFBase.MVVM.DelegateCommand.AsyncDelegateCommand.CanExecuteChanged">
+            <summary>
+            Raised when CanExecute is changed
+            </summary>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.DelegateCommand.AsyncDelegateCommand.CanExecute(System.Object)">
+            <summary>
+                Executes the delegate backing this DelegateCommand
+            </summary>
+            <param name="parameter">parameter to pass to predicate</param>
+            <returns>True if command is valid for execution</returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.DelegateCommand.AsyncDelegateCommand.Execute(System.Object)">
+             <summary>
+            
+             </summary>
+             <param name="parameter">parameter to pass to delegate</param>
+             <exception cref="T:System.InvalidOperationException">Thrown if CanExecute returns false</exception>
+        </member>
+        <member name="F:JPB.WPFBase.MVVM.DelegateCommand.DelegateCommand.CanExecutePredicate">
+            <summary>
+                Predicate to determine if the command is valid for execution
+            </summary>
+        </member>
+        <member name="F:JPB.WPFBase.MVVM.DelegateCommand.DelegateCommand.ExecutionAction">
+            <summary>
+                Action to be performed when this command is executed
+            </summary>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.DelegateCommand.DelegateCommand.#ctor(System.Action)">
+            <summary>
+                Initializes a new instance of the DelegateCommand class.
+                The command will always be valid for execution.
+            </summary>
+            <param name="execute">The delegate to call on execution</param>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.DelegateCommand.DelegateCommand.#ctor(System.Action{System.Object})">
+            <summary>
+                Initializes a new instance of the DelegateCommand class.
+                The command will always be valid for execution.
+            </summary>
+            <param name="execute">The delegate to call on execution</param>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.DelegateCommand.DelegateCommand.#ctor(System.Action{System.Object},System.Func{System.Object,System.Boolean})">
+            <summary>
+                Initializes a new instance of the DelegateCommand class.
+            </summary>
+            <param name="execute">The delegate to call on execution</param>
+            <param name="canExecute">The predicate to determine if command is valid for execution</param>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.DelegateCommand.DelegateCommand.#ctor(System.Action,System.Func{System.Boolean})">
+            <summary>
+                Initializes a new instance of the DelegateCommand class.
+            </summary>
+            <param name="execute">The delegate to call on execution</param>
+            <param name="canExecute">The predicate to determine if command is valid for execution</param>
+        </member>
+        <member name="E:JPB.WPFBase.MVVM.DelegateCommand.DelegateCommand.CanExecuteChanged">
+            <summary>
+                Raised when CanExecute is changed
+            </summary>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.DelegateCommand.DelegateCommand.CanExecute(System.Object)">
+            <summary>
+                Executes the delegate backing this DelegateCommand
+            </summary>
+            <param name="parameter">parameter to pass to predicate</param>
+            <returns>True if command is valid for execution</returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.DelegateCommand.DelegateCommand.Execute(System.Object)">
+            <summary>
+                Executes the delegate backing this DelegateCommand
+            </summary>
+            <param name="parameter">parameter to pass to delegate</param>
+            <exception cref="T:System.InvalidOperationException">Thrown if CanExecute returns false</exception>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.DelegateCommand.DelegateCommand`1.#ctor(System.Action)">
+            <inheritdoc />
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.DelegateCommand.DelegateCommand`1.#ctor(System.Action{`0})">
+            <inheritdoc />
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.DelegateCommand.DelegateCommand`1.#ctor(System.Action{`0},System.Func{`0,System.Boolean})">
+            <inheritdoc />
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.DelegateCommand.DelegateCommand`1.#ctor(System.Action,System.Func{System.Boolean})">
+            <inheritdoc />
+        </member>
+        <member name="T:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase">
+            <summary>
+                Contains Methods for executing background tasks.
+                All Background Tasks will be executed with the Framework interal Dispatcher Lock.
+                All Ui Related operations from that tasks are Dispatcher-Thread save if you use the WPFToolsAwesome
+            </summary>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.#ctor(System.Windows.Threading.Dispatcher)">
+            <summary>
+            	Creates a new <c>AsyncViewModelBase</c> with the given Dispatcher
+            </summary>
+            <param name="disp"></param>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.#ctor">
+            <summary>
+            	Creates a new <c>AsyncViewModelBase</c> with ether the Captured dispatcher from the current DispatcherLock or the current Application Dispatcher
+            </summary>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.TaskList">
+            <summary>
+            	A Collection of all currently running Tasks
+            </summary>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.IsNotWorking">
+            <summary>
+                The negated WorkingFlag
+                Will be triggerd with SendPropertyChanged/ing
+            </summary>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.AsyncViewModelBaseOptions">
+            <summary>
+                Task options for this Instance
+            </summary>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.Item(System.String)">
+            <summary>
+                Checks the current Task list for the <paramref name="index" />
+            </summary>
+            <param name="index">The named task to check</param>
+            <returns>
+                <value>True</value>
+                when a task with the name of <paramref name="index" /> exists otherwise
+                <value>False</value>
+            </returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.CheckCanExecuteCondition(System.String)">
+            <summary>
+                Allows you to check for a Condtion if the calling method is named after the mehtod you would like to check but
+                starts with "Can"
+            </summary>
+            <param name="taskName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.StartWork">
+            <summary>
+                Will be executed right before a Task is started
+            </summary>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.EndWork">
+            <summary>
+                Will be executed right before a Task is finshed
+            </summary>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.OnTaskException(System.Exception)">
+            <summary>
+                Override this to handle exceptions thrown by any Task worker function
+            </summary>
+            <param name="exception"></param>
+            <returns>
+                <value>True</value>
+                if the exception was Handled otherwise
+                <value>False</value>
+                . If false the exception will be bubbled to the caller
+            </returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.SimpleWorkWithSyncContinue``1(System.Threading.Tasks.Task{``0},System.Action{``0},System.Boolean,System.String)">
+            <summary>
+                Runs the <paramref name="delegatetask" /> and schedules the <paramref name="continueWith" /> in the Dispatcher
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="delegatetask"></param>
+            <param name="continueWith"></param>
+            <param name="setWorking"></param>
+            <param name="taskName"></param>
+            <returns>The created and running Task</returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.SimpleWorkWithSyncContinue(System.Threading.Tasks.Task,System.Action,System.Boolean,System.String)">
+            <summary>
+                Runs the <paramref name="delegatetask" /> and schedules the <paramref name="continueWith" /> in the Dispatcher
+            </summary>
+            <param name="delegatetask"></param>
+            <param name="continueWith"></param>
+            <param name="setWorking"></param>
+            <param name="taskName"></param>
+            <returns>The created and running Task</returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.SimpleWorkWithSyncContinue``1(System.Func{``0},System.Action{``0},System.Boolean,System.String)">
+            <summary>
+                Runs the <paramref name="delegatetask" /> in a task and schedules the <paramref name="continueWith" /> in the
+                Dispatcher
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="delegatetask"></param>
+            <param name="continueWith"></param>
+            <param name="setWorking"></param>
+            <param name="taskName"></param>
+            <returns>The created and running Task</returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.SimpleWorkWithSyncContinueAsync(System.Func{System.Threading.Tasks.Task},System.Action,System.Boolean,System.String)">
+            <summary>
+                Runs the <paramref name="delegatetask" /> in a task and schedules the <paramref name="continueWith" /> in the
+                Dispatcher
+            </summary>
+            <param name="delegatetask"></param>
+            <param name="continueWith"></param>
+            <param name="setWorking"></param>
+            <param name="taskName"></param>
+            <returns>The created and running Task</returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.SimpleWorkWithSyncContinueAsync``1(System.Func{System.Threading.Tasks.Task{``0}},System.Action{``0},System.Boolean,System.String)">
+            <summary>
+                Runs the <paramref name="delegatetask" /> in a task and schedules the <paramref name="continueWith" /> in the
+                Dispatcher
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="delegatetask"></param>
+            <param name="continueWith"></param>
+            <param name="setWorking"></param>
+            <param name="taskName"></param>
+            <returns>The created and running Task</returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.SimpleWorkWithSyncContinue``1(System.Func{``0},System.Action{``0},System.String)">
+            <summary>
+                Runs the <paramref name="delegatetask" /> in a task and schedules the <paramref name="continueWith" /> in the
+                Dispatcher
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="delegatetask"></param>
+            <param name="continueWith"></param>
+            <param name="taskName"></param>
+            <returns>The created and running Task</returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.SimpleWorkWithSyncContinueAsync``1(System.Func{System.Threading.Tasks.Task{``0}},System.Action{``0},System.String)">
+            <summary>
+                Runs the <paramref name="delegatetask" /> in a task and schedules the <paramref name="continueWith" /> in the
+                Dispatcher
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="delegatetask"></param>
+            <param name="continueWith"></param>
+            <param name="taskName"></param>
+            <returns>The created and running Task</returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.SimpleWorkWithSyncContinue(System.Action,System.Action,System.String)">
+            <summary>
+                Runs the <paramref name="delegatetask" /> in a task and schedules the <paramref name="continueWith" /> in the
+                Dispatcher
+            </summary>
+            <param name="delegatetask"></param>
+            <param name="continueWith"></param>
+            <param name="taskName"></param>
+            <returns>The created and running Task</returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.BackgroundSimpleWork(System.Action,System.String)">
+            <summary>
+                Runs the <paramref name="delegatetask" /> in a task. Does not set the IsWorking Flag
+            </summary>
+            <param name="delegatetask"></param>
+            <param name="taskName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.BackgroundSimpleWork``1(System.Func{``0},System.Action{``0},System.String)">
+            <summary>
+                Runs the <paramref name="delegatetask" /> in a task. Does not set the IsWorking Flag
+            </summary>
+            <param name="delegatetask"></param>
+            <param name="continueWith"></param>
+            <param name="taskName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.BackgroundSimpleWorkAsync``1(System.Func{System.Threading.Tasks.Task{``0}},System.Action{``0},System.String)">
+            <summary>
+                Runs the <paramref name="delegatetask" /> in a task. Does not set the IsWorking Flag
+            </summary>
+            <param name="delegatetask"></param>
+            <param name="continueWith"></param>
+            <param name="taskName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.SimpleWork(System.Action,System.String)">
+            <summary>
+                Runs the <paramref name="delegatetask" />
+            </summary>
+            <param name="delegatetask"></param>
+            <param name="taskName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.SimpleWork(System.Action,System.Action,System.String)">
+            <summary>
+                Runs the <paramref name="delegatetask" /> and executes the continueWith after that
+            </summary>
+            <param name="delegatetask"></param>
+            <param name="continueWith"></param>
+            <param name="taskName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.SimpleWork``1(System.Func{``0},System.Action{``0},System.String)">
+            <summary>
+                Runs the <paramref name="delegatetask" /> and executes the continueWith after that
+            </summary>
+            <param name="delegatetask"></param>
+            <param name="continueWith"></param>
+            <param name="taskName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.SimpleWorkAsync(System.Func{System.Threading.Tasks.Task},System.Action,System.String)">
+            <summary>
+                Runs the <paramref name="delegatetask" /> and executes the continueWith after that
+            </summary>
+            <param name="delegatetask"></param>
+            <param name="continueWith"></param>
+            <param name="taskName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.SimpleWorkAsync(System.Func{System.Threading.Tasks.Task},System.String)">
+            <summary>
+                Runs the <paramref name="delegatetask" /> and executes the continueWith after that
+            </summary>
+            <param name="delegatetask"></param>
+            <param name="taskName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.SimpleWorkAsync``1(System.Func{System.Threading.Tasks.Task{``0}},System.Action{``0},System.String)">
+            <summary>
+                Runs the <paramref name="delegatetask" /> and executes the continueWith after that
+            </summary>
+            <param name="delegatetask"></param>
+            <param name="continueWith"></param>
+            <param name="taskName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.SimpleWork(System.Delegate,System.Delegate,System.String)">
+            <summary>
+                Creates a Background Task
+            </summary>
+            <param name="delegatetask">The Delegate that should be executed async.</param>
+            <param name="continueWith">
+                The Delegate that should be executed when <paramref name="delegatetask" /> is done. Must
+                accept an Task as first argument
+            </param>
+            <param name="taskName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.SimpleWork(System.Threading.Tasks.Task,System.Delegate,System.String,System.Boolean)">
+            <summary>
+                Runs the <paramref name="task" /> and executes the continueWith after that
+            </summary>
+            <param name="task">An Started or Not started task</param>
+            <param name="continueWith"></param>
+            <param name="taskName"></param>
+            <param name="setWorking"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.SimpleWork(System.Threading.Tasks.Task,System.Action,System.String,System.Boolean)">
+            <summary>
+                Runs the <paramref name="task" /> and executes the continueWith after that
+            </summary>
+            <param name="task">An Started or Not started task</param>
+            <param name="continueWith"></param>
+            <param name="taskName"></param>
+            <param name="setWorking"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.SimpleWork(System.Threading.Tasks.Task,System.String)">
+            <summary>
+                Runs the <paramref name="task" />
+            </summary>
+            <param name="task">An Started or Not started task</param>
+            <param name="taskName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.SimpleWork(System.Threading.Tasks.Task,System.Boolean,System.String)">
+            <summary>
+                Runs the <paramref name="task" />
+            </summary>
+            <param name="task">An Started or Not started task</param>
+            <param name="setWorking"></param>
+            <param name="taskName"></param>
+            <returns></returns>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.ViewModel.AsyncViewModelBase.IsWorking">
+            <summary>
+                Indicates that this Manager is currently working or not
+            </summary>
+        </member>
+        <member name="T:JPB.WPFBase.MVVM.ViewModel.DispatcherLock">
+            <summary>
+            	Can be used to Capture the Application Dispatcher across threads
+            </summary>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.DispatcherLock.GetDispatcher">
+            <summary>
+            	Gets the Captured Dispatcher or the current Application dispatcher.
+            	If no Dispatcher was Captured from another thread and its called from another thread, it will return null
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.DispatcherLock.CatpureDispatcher">
+            <summary>
+            	Captures the Dispatcher from the current Application inside the thread
+            </summary>
+            <returns>An IDisposable object that can be used to remove the assosiation</returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.DispatcherLock.Dispose">
+            <summary>
+            	Removes the Assosiation from the Current thread
+            </summary>
+        </member>
+        <member name="T:JPB.WPFBase.MVVM.ViewModel.Memento.Attributes.IgnoreMementoAttribute">
+            <summary>
+            	If decorates a Property, no moments will be collected for it.
+            	If decorates a Class, no moments for propertys on this class will be collected (all propertys from base or higher objects will still be collected)
+            </summary>
+        </member>
+        <member name="T:JPB.WPFBase.MVVM.ViewModel.Memento.IMementoDataStamp">
+            <summary>
+            	Strategy for Storeing a single Memento moment.
+            </summary>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.ViewModel.Memento.IMementoDataStamp.PreserveTypeInSnapshot">
+            <summary>
+            	If returns true the current IMementoDataStamp implimentation will be preserved when a Snapshot is created
+            </summary>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.IMementoDataStamp.GetData">
+            <summary>
+            	Should return the unmodified moment of the data.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.IMementoDataStamp.CaptureData(System.Object)">
+            <summary>
+            	Should set the internal data
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.IMementoDataStamp.CanGetData">
+            <summary>
+            	If returns true the data is still the same as when captured
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.IMementoDataStamp.CanSetData(System.Object)">
+            <summary>
+            	If returns true the given object can be stored
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.IMementoDataStamp.Forget">
+            <summary>
+            	The DataStamp should forget the Data
+            </summary>
+        </member>
+        <member name="T:JPB.WPFBase.MVVM.ViewModel.Memento.ImportFlags">
+            <summary>
+                Defines how imported Moments should be processed
+            </summary>
+        </member>
+        <member name="F:JPB.WPFBase.MVVM.ViewModel.Memento.ImportFlags.Append">
+            <summary>
+                All imported ages will be appended to the memento
+            </summary>
+        </member>
+        <member name="F:JPB.WPFBase.MVVM.ViewModel.Memento.ImportFlags.Prefix">
+            <summary>
+                All imported ages will be set before all existing moments
+            </summary>
+        </member>
+        <member name="T:JPB.WPFBase.MVVM.ViewModel.Memento.MementoController">
+            <summary>
+                Defines methods for Controling the current momento of the ViewModel
+            </summary>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.ViewModel.Memento.MementoController.Ui">
+            <summary>
+                When called will return an Proxy for Accessing the Memento functions for a Property. Call for the Property you want
+                and then you will get a <see cref="T:JPB.WPFBase.MVVM.ViewModel.Memento.UiMementoController" />
+            </summary>
+            <example>
+                Ui.PropertyName.Forget
+            </example>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.MementoController.Blacklist(System.String)">
+            <summary>
+                Ignores the Memento capture of a certain property
+            </summary>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.MementoController.Whitelist(System.String)">
+            <summary>
+                Removes the Ignore of mementos on a certain property
+            </summary>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.MementoController.GoInHistory(System.String,System.Int32)">
+            <summary>
+                Goes forth or back in History. If
+                <para>ages</para>
+                is negative it goes back. if positive it goes forth
+            </summary>
+            <param name="propertyName"></param>
+            <param name="ages"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.MementoController.CanGoInHistory(System.String,System.Int32)">
+            <summary>
+                Goes forth or back in History. If
+                <para>ages</para>
+                is negative it goes back. if positive it goes forth
+            </summary>
+            <param name="propertyName"></param>
+            <param name="ages"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.MementoController.Snapshot(System.String,JPB.WPFBase.MVVM.ViewModel.Memento.Snapshots.MementoPropertySnaptshot@)">
+            <summary>
+                Returns a single Serializable Snapshot of the Current MementoData for a Property
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.MementoController.Snapshot(JPB.WPFBase.MVVM.ViewModel.Memento.Snapshots.MementoObjectSnapshot@)">
+            <summary>
+                Returns a Serializable Snapshot of the Current MementoData
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.MementoController.Forget(System.String,JPB.WPFBase.MVVM.ViewModel.Memento.MementoValueProducer@)">
+            <summary>
+                Forgets all Memento data stored for the given
+                <para>propertyName</para>
+            </summary>
+            <param name="propertyName"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.MementoController.Forget(System.String)">
+            <summary>
+                Forgets all Memento data stored for the given
+                <para>propertyName</para>
+            </summary>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.MementoController.Forget">
+            <summary>
+                Forgets all Memento data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:JPB.WPFBase.MVVM.ViewModel.Memento.MementoDataStampProxy">
+            <summary>
+            	Captures the given data and appends additonal data to it.
+            </summary>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.MementoDataStampProxy.#ctor">
+            <summary>
+            	For Serialisation only
+            </summary>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.MementoDataStampProxy.#ctor(System.Func{System.Object,System.Object},JPB.WPFBase.MVVM.ViewModel.Memento.IMementoDataStamp)">
+             <summary>
+            		Creates a new Proxy Data Stamp. Use the gatherAddtionalData delegate to return an object that should be keeped along the orignal datastamp such as the datetime it was created.
+            		each time the Capture data will be called the delegate will be invoked
+             </summary>
+             <param name="gatherAdditionalData"></param>
+            <param name="valueHolder"></param>
+        </member>
+        <member name="T:JPB.WPFBase.MVVM.ViewModel.Memento.MementoOptions">
+            <summary>
+                Contains all Memento Options for a ViewModel. Set the Default to enable all NEW created memento using ViewModels to
+                use the given options
+            </summary>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.ViewModel.Memento.MementoOptions.CaptureByINotifyPropertyChanged">
+            <summary>
+                If set the <code>MementoViewModelBase</code> listens to the INotifyPropertyChanged event
+            </summary>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.ViewModel.Memento.MementoOptions.TryCloneData">
+            <summary>
+            	If the Data impliments <see cref="T:System.ICloneable"/> it will try to clone the data
+            </summary>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.ViewModel.Memento.MementoOptions.WeakData">
+            <summary>
+                If set to true reference types will be stored as Weak references
+            </summary>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.ViewModel.Memento.MementoSerializationOptions.SaveSerialization">
+            <summary>
+            	If set, non .NET types will be emitted to the Serialized output
+            </summary>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.ViewModel.Memento.MementoSerializationOptions.AssemblyResolve">
+            <summary>
+            	Can be used to overwrite the default .Net Resolve for Assemblys
+            </summary>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.ViewModel.Memento.MementoSerializationOptions.TypeResolve">
+            <summary>
+            	Can be used to overwrite the default .Net Resolve for Types
+            </summary>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.ViewModel.Memento.MementoValueProducer.Ignore">
+            <summary>
+            	If set no moments are collected for this Property
+            </summary>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.ViewModel.Memento.MementoValueProducer.CurrentAge">
+            <summary>
+            	Returns the Current age of the Property
+            </summary>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.ViewModel.Memento.MementoValueProducer.PropertyName">
+            <summary>
+            	The name of the Property to watch
+            </summary>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.ViewModel.Memento.MementoValueProducer.MementoDataStamps">
+            <summary>
+            	Returns a ReadOnly copy of the Current MementoData
+            </summary>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.MementoValueProducer.Forget">
+            <summary>
+            	Forgets every Moment
+            </summary>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.MementoValueProducer.GoInHistory(JPB.WPFBase.MVVM.ViewModel.Memento.MementoViewModelBase,System.Int32)">
+             <summary>
+            		Goes forth or back in History. If <para>ages</para> is negative it goes back. if positive it goes forth
+             </summary>
+            <param name="viewModel"></param>
+            <param name="ages"></param>
+             <returns></returns>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.MementoValueProducer.CanGoInHistory(System.Int32)">
+            <summary>
+            	
+            </summary>
+            <param name="ages"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JPB.WPFBase.MVVM.ViewModel.Memento.MementoViewModelBase">
+            <summary>
+                Uses the Memento Pattern to Store and revert all INotifyPropertyChanged/ing properties
+            </summary>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.MementoViewModelBase.#ctor(System.Windows.Threading.Dispatcher)">
+            <summary>
+            	Creates a new <c>AsyncViewModelBase</c> with the given Dispatcher
+            </summary>
+            <param name="disp"></param>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.ViewModel.Memento.MementoViewModelBase.MementoControl">
+            <summary>
+            	Returns a Controller that can be used to control the current memento of a Property or all properties
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.ViewModel.Memento.MementoViewModelBase.MementoOptions">
+            <summary>
+                The options set for this instance
+            </summary>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.ViewModel.Memento.MementoViewModelBase.CaptureByINotifyPropertyChanged">
+            <summary>
+                If set the <code>MementoViewModelBase</code> listens to the INotifyPropertyChanged event
+            </summary>
+        </member>
+        <member name="P:JPB.WPFBase.MVVM.ViewModel.Memento.MementoViewModelBase.MementoData">
+            <summary>
+                The Current known Memento Data for all Properties
+            </summary>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.MementoViewModelBase.StartCapture">
+            <summary>
+                Starts the Listening to the INotifyPropertyChanged event
+            </summary>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.MementoViewModelBase.StopCapture">
+            <summary>
+                Stops the Listening to the INotifyPropertyChanged event
+            </summary>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.Memento.MementoViewModelBase.CreateDataStemp">
+            <summary>
+                If not Overwritten, returns a DataStamp objects that controls how the data is stored
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:JPB.WPFBase.MVVM.ViewModel.Memento.MementoViewModelBase.DoNotSetMoment">
+            <summary>
+            	Used to Control the GoInHistory feature. If we are currently switching the History, do not emit a moment
+            </summary>
+        </member>
+        <member name="T:JPB.WPFBase.MVVM.ViewModel.Memento.UiMementoController">
+            <summary>
+            	Defines ICommands for controlling the Moment of a single Property from the UI
+            </summary>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.ThreadSaveObservableCollection`1.InTransaction(System.Func{JPB.WPFBase.MVVM.ViewModel.ThreadSaveObservableCollection{`0},System.Boolean},System.Boolean)">
+            <summary>
+                Batches commands into a single statement that will run when the delegate will retun true. Lock is optional but
+                recommand
+            </summary>
+            <param name="action">
+                You can Query against this collection. Its a copy and only collection actions as Add, Remove or
+                else will be in Transaction
+            </param>
+            <param name="withLock">When True the Source collection will be locked as long as the Transaction is running</param>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.ThreadSaveViewModelActor.Catch">
+            <summary>
+            Shorthand for <code>DispatcherLock.CatpureDispatcher()</code>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:JPB.WPFBase.MVVM.ViewModel.ViewModelBase.PropertyChanged">
+            <summary>
+                Raised when a property on this object has a new value
+            </summary>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.ViewModelBase.SetProperty``1(``0@,``0,System.String)">
+            <summary>
+            Allows to raise the AcceptPending Change for the Memento Pattern
+            </summary>
+            <param name="member"></param>
+            <param name="value"></param>
+            <param name="propertyName"></param>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.ViewModelBase.SetProperty``1(``0@,``0,System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+            Allows to raise the AcceptPending Change for the Memento Pattern
+            </summary>
+            <param name="member"></param>
+            <param name="value"></param>
+            <param name="property"></param>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.ViewModelBase.SendPropertyChanged(System.String)">
+            <summary>
+                Raises this ViewModels PropertyChanged event
+            </summary>
+            <param name="propertyName">Name of the property that has a new value</param>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.ViewModelBase.SendPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+                Raises this ViewModels PropertyChanged event
+            </summary>
+            <param name="e">Arguments detailing the change</param>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.ViewModelBase.SendPropertyChanged``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+            Raises the PropertyChanged Event
+            </summary>
+            <typeparam name="TProperty"></typeparam>
+            <param name="property"></param>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.ViewModelBase.SendPropertyChanging(System.String)">
+            <summary>
+                Raises this ViewModels PropertyChanged event
+            </summary>
+            <param name="propertyName">Name of the property that has a new value</param>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.ViewModelBase.SendPropertyChanging(System.ComponentModel.PropertyChangingEventArgs)">
+            <summary>
+                Raises this ViewModels PropertyChanging event
+            </summary>
+            <param name="e">Arguments detailing the change</param>
+        </member>
+        <member name="M:JPB.WPFBase.MVVM.ViewModel.ViewModelBase.SendPropertyChanging``1(System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+                Raises this ViewModels PropertyChanging event
+            </summary>
+            <param name="property">Arguments detailing the change</param>
+        </member>
+    </members>
+</doc>

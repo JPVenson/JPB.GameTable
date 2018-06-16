@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="JPB.GameTable.Ui.Subspace.Browser.Resources.FullBrowser"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:JPB.GameTable.Ui.Subspace.Browser.Resources"
+             xmlns:commands="clr-namespace:JPB.GameTable.Ui.Subspace.Browser.Commands"
+             xmlns:viewModel="clr-namespace:JPB.GameTable.Ui.Subspace.Browser.ViewModel"
+             xmlns:sharedControls="clr-namespace:JPB.GameTable.Ui.Subspace.Browser.Commands;assembly=JPB.GameTable.Shared"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             d:DataContext="{d:DesignData BrowserSubSpaceViewModel}">
+	<UserControl.Resources>
+		
+		<DataTemplate DataType="{x:Type viewModel:BrowserTabViewModel}">
+			<local:BrowserTabView />
+		</DataTemplate>
+	</UserControl.Resources>
+	<DockPanel>
+		
+		<sharedControls:NonReloadingTabControl x:Name="TabControl"
+			                                 Margin="0,5,0,0"
+											   SelectedItem="{Binding SelectedTab}"
+			                                 ItemsSource="{Binding BrowserTabs, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+			                                 SelectedIndex="0">
+			<TabControl.ItemTemplate>
+				<DataTemplate>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Text="{Binding Title}"/>
+						<Button Content="X"
+							        Height="20"
+							        Width="20"
+							        FontFamily="Courier"
+							        FontWeight="Bold"
+							        Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+							        Command="Close"
+							        FontSize="10"
+							        Padding="0"
+							        Margin="10,0,0,0"
+							        ToolTip="Close"/>
+					</StackPanel>
+				</DataTemplate>
+			</TabControl.ItemTemplate>
+			<TabControl.ContentTemplate>
+				<DataTemplate>
+					<ContentControl Content="{Binding}" />
+				</DataTemplate>
+			</TabControl.ContentTemplate>
+		</sharedControls:NonReloadingTabControl>
+	</DockPanel>
+</UserControl>
+

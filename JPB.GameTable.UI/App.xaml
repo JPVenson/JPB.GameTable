@@ -1,0 +1,31 @@
+﻿<Application x:Class="JPB.GameTable.UI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:JPB.GameTable.UI"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         <ResourceDictionary>
+	         <ResourceDictionary.MergedDictionaries>
+		         <ResourceDictionary Source="Dialogs/Resources/DialogResources.xaml" />
+		         <ResourceDictionary Source="Resources/SubSpace/SubSpaceResources.xaml" />
+				<ResourceDictionary Source="pack://application:,,,/JPB.GameTable.Shared;component/Controls/ControlResources.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+			 
+			 <Style TargetType="ToggleButton">
+				 <Style.Setters>
+					 <Setter Property="ClickMode" Value="Press"/>
+				 </Style.Setters>
+			 </Style> 
+	         <Style TargetType="Button">
+				 <Style.Setters>
+					 <Setter Property="ClickMode" Value="Press"/>
+				 </Style.Setters>
+			 </Style>
+	         <Style TargetType="RepeatButton">
+				 <Style.Setters>
+					 <Setter Property="ClickMode" Value="Press"/>
+				 </Style.Setters>
+			 </Style>
+		</ResourceDictionary>
+    </Application.Resources>
+</Application>
